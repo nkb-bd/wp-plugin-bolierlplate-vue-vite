@@ -1,0 +1,27 @@
+{
+  "assets/logo.png": {
+    "file": "logo.png",
+    "src": "assets/logo.png"
+  },
+  "main.js": {
+    "file": "main.js",
+    "src": "main.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor.js"
+    ],
+    "css": [
+      "main.css"
+    ],
+    "assets": [
+      "logo.png"
+    ]
+  },
+  "_vendor.js": {
+    "file": "vendor.js"
+  },
+  "main.css": {
+    "file": "main.css",
+    "src": "main.css"
+  }
+}
