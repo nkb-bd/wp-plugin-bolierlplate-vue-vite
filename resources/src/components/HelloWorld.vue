@@ -1,6 +1,9 @@
 <template>
 
-  <h1>Vue {{ msg }}</h1>
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+        {{msg}}
+    </h1>
 
   <p>
     <a href="https://vitejs.dev/guide/features.html" target="_blank">
