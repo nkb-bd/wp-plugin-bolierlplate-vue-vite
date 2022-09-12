@@ -20,41 +20,36 @@ class Menu
                 'page_title' => 'Lite Plugin',
                 'menu_title' => 'Lite Plugin',
                 'capability' => 'manage_options',
-                'menu_slug' => 'lite_plugin',
-                'callback' =>  array($this,'callback'),
-                'icon_url' => 'dashicons-store',
-                'position' => 110
+                'menu_slug'  => 'lite_plugin',
+                'callback'   => array($this, 'callback'),
+                'icon_url'   => 'dashicons-store',
+                'position'   => 110
             )
         );
-        
-        $this->subpages = array(
-            array(
-                'parent_slug' => 'lite_plugin',
-                'page_title' => 'Custom Post Types',
-                'menu_title' => 'CPT',
-                'capability' => 'manage_options',
-                'menu_slug' => 'cpt',
-                'callback' => ''
-            ),
-        );
+
+//        $this->subpages = array(
+//            array(
+//                'parent_slug' => 'slug',
+//                'page_title'  => 'Title',
+//                'menu_title'  => 'title',
+//                'capability'  => 'manage_options',
+//                'menu_slug'   => 'slug',
+//                'callback'    => ''
+//            ),
+//        );
     }
     
     public function callback()
     {
-        echo '<div id="app">Its Done </div>';
-        
+        echo '<div id="app">Loading </div>';
     }
     
     public function register()
-    {   
-        add_action('admin_enqueue_scripts',function(){
-
-             (new \LitePluginSkeleton\App\Classes\ViteAssetLoader())->init();
+    {
+        add_action('admin_enqueue_scripts', function () {
+            (new \LitePluginSkeleton\App\Classes\ViteAssetLoader())->init();
         });
-    
-       
-    
+        
         $this->menus->addPages($this->pages)->withSubPage('Dashboard')->addSubPages($this->subpages)->register();
-    
     }
 }

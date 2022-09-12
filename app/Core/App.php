@@ -2,9 +2,6 @@
 
 namespace LitePluginSkeleton\App\Core;
 
-use LitePluginSkeleton\App\Classes\Menu;
-use LitePluginSkeleton\App\Core\Router\Rest;
-
 final class App
 {
     
@@ -52,11 +49,10 @@ final class App
     public function init()
     {
         add_action('rest_api_init', function () {
-             (new \LitePluginSkeleton\App\Core\Router\Rest('lite-plugin-skeleton'))->load($this->filePath . 'app/routes.php');
+            (new \LitePluginSkeleton\App\Core\Router\Rest('lite-plugin-skeleton'))->load($this->filePath . 'app/routes.php');
         });
         
         (new \LitePluginSkeleton\App\Classes\Menu())->register();
-        
     }
     
     public static function instance()

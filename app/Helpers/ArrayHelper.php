@@ -1,6 +1,6 @@
 <?php
 
-namespace FluentSecurity\Helpers;
+namespace LitePluginSkeleton\App\Helpers;
 
 use Closure;
 use ArrayAccess;

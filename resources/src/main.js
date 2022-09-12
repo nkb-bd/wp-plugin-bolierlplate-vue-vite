@@ -2,7 +2,7 @@
 // import 'vite/modulepreload-polyfill'
 
 // Styles
-import './styles/example.css'
+import './styles/main.css'
 
 
 
