@@ -2,7 +2,9 @@
 // import 'vite/modulepreload-polyfill'
 
 // Styles
-import './styles'
+import './styles/example.css'
+
+
 
 // Vue
 

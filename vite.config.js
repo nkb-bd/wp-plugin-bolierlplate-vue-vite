@@ -23,20 +23,14 @@ export default defineConfig({
   plugins: [
     vue(),
     liveReload([
-      // edit live reload paths according to your source code
-      // for example:
-      __dirname + '/(app|config|views)/**/*.php',
-      // using this for our example:
-      __dirname + '/../public/*.php',
+      __dirname + '/(app|config)/**/*.php',
+      __dirname + '/*.php',
     ]),
-    splitVendorChunkPlugin(),
   ],
 
   // config
   root: 'resources/src',
-  base: process.env.APP_ENV === 'development'
-    ? '/'
-    : '/dist/',
+  base: process.env.APP_ENV === 'development'? '/': '/dist/',
 
   build: {
     // output dir for production build
@@ -50,11 +44,11 @@ export default defineConfig({
     rollupOptions: {
       input: path.resolve(__dirname, 'resources/src/main.js'),
 
-      output: {
-          entryFileNames: `[name].js`,
-          chunkFileNames: `[name].js`,
-          assetFileNames: `[name].[ext]`
-      }
+      // output: {
+      //     entryFileNames: `[name].js`,
+      //     chunkFileNames: `[name].js`,
+      //     assetFileNames: `[name].[ext]`
+      // }
     }
   },
 
@@ -63,7 +57,6 @@ export default defineConfig({
     // change freely, but update on PHP to match the same port
     // tip: choose a different port per project to run them at the same time
     
-    // strictPort: true,
     port: 5133,
     cors: true,
     strictPort: true,
@@ -73,10 +66,4 @@ export default defineConfig({
       protocol: 'ws',
     },
   },
-
-  resolve: {
-     alias:{
-      // '@' : path.resolve(__dirname, './')
-    },
-  }
 })
